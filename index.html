@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="podcasts.jpg" >
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="padcasts,OPML,macOS,Catalina,iOS">
+    <style>
+      .app {
+          width: 60%;
+      }
+      .upload {
+          margin: 30px 0 20px 0;
+      }
+    </style>
+    <title>Padcasts exporter for macOS Catalina</title>
+  </head>
+  <body>
+    <a href="https://github.com/jiacai2050/podcasts-opml-exporter/"><img style="position: absolute; top: 0px; right: 0px; border: 0px none; --darkreader-inline-border-top:currentcolor; --darkreader-inline-border-right:currentcolor; --darkreader-inline-border-bottom:currentcolor; --darkreader-inline-border-left:currentcolor;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" data-darkreader-inline-border-top="" data-darkreader-inline-border-right="" data-darkreader-inline-border-bottom="" data-darkreader-inline-border-left=""></a>
+    <script type="text/javascript" src="app.js">
+    </script>
+    <div class="app">
+      <h1>Padcasts exporter for macOS Catalina</h1>
+      <p>Export padcasts to OPML <a href="https://mjtsai.com/blog/2019/10/13/podcasts-in-catalina/">since Catalina</a>, this is very inconvenient 😴.
+      So I create this website, you can still get your subscription OPML with just one click.</p>
+      <p>Upload your <code>~/Library/Containers/com.apple.podcasts/Data/Documents/PodcastsDB.plist</code> file, OPML will automatically download 🍺.</p>
+      <div class="upload">
+        <label class="custom-file-label" for="plistFile">Choose plist file:</label>
+        <input type="file" class="custom-file-input" id="plistFile" accept=".plist">
+      </div>
+      <div id="warn"></div>
+      <a id="download" download="Podcasts.opml" style="display:none"></a>
+      <p>If you have any questions or suggestions, welcome to <a href="https://github.com/jiacai2050/podcasts-opml-exporter/issues">open an issue.</a> 🛠</p>
+    </div>
+
+  </body>
+</html>
