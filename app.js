@@ -35,6 +35,7 @@ function parsePlist(body) {
     var dict = array.childNodes[i];
     if (dict.nodeName === 'dict') {
       var kvs = dict.childNodes;
+      if (kvs.length < 11) { continue; }
       if (kvs[11].firstChild.nodeValue === "Podcasts") {
         var podcasts_array = kvs[3];
         for(var m=0;m<podcasts_array.childNodes.length; m++ ) {
