@@ -63,6 +63,11 @@ function parsePodcastDict(dict) {
     v = v.firstChild.nodeValue;
     o[k] = v;
     // console.log(i, dict.childNodes[i], k ,v);
+    if (k==='title') {
+      o.title = v.replace(/&/g, ' and ').replace(/\s{2,}/g, ' ');
+    } else if (k==='feedUrl') {
+      o.feedUrl = v.replace( /&/g, '&amp;' );
+    }
   }
   return o;
 }
