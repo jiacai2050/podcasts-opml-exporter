@@ -1,5 +1,10 @@
 "use strict";
 
+function log(text) {
+  let info = document.getElementById('info');
+  info.append(text + '\n');
+}
+
 window.onload = function () {
   let fileInput = document.getElementById('plistFile');
   fileInput.addEventListener('change', function (e) {
@@ -11,8 +16,7 @@ window.onload = function () {
         parsePlist(reader.result);
       } catch(e)  {
         console.error(e);
-        let warn = document.getElementById('warn');
-        warn.innerText = e;
+        log("🛑 " + e);
       }
     };
     reader.readAsText(file);
@@ -41,13 +45,17 @@ function parsePlist(body) {
         for(var m=0;m<podcasts_array.childNodes.length; m++ ) {
           var current = podcasts_array.childNodes[m];
           if (current.nodeName === 'dict') {
-            ret.push(parsePodcastDict(current));
+            let podcast = parsePodcastDict(current)
+            if (podcast) {
+              ret.push(parsePodcastDict(current));
+            }
           }
         }
       }
     }
   }
   download(ret);
+  log(`✅ Exported ${ret.length} podcasts`);
 }
 
 function parsePodcastDict(dict) {
@@ -68,6 +76,10 @@ function parsePodcastDict(dict) {
     } else if (k==='feedUrl') {
       o.feedUrl = v.replace( /&/g, '&amp;' );
     }
+  }
+  if (!o.feedUrl) {
+    log(`⚠️ Exclude podcast "${o.title}" due to missing feed url`)
+    return null;
   }
   return o;
 }

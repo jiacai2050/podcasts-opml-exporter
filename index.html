@@ -13,6 +13,10 @@
       .upload {
           margin: 30px 0 20px 0;
       }
+
+      #info {
+        white-space: pre-line;
+      }
     </style>
     <title>Podcasts exporter for macOS Catalina</title>
   </head>
@@ -29,7 +33,7 @@
         <label class="custom-file-label" for="plistFile">Choose plist file:</label>
         <input type="file" class="custom-file-input" id="plistFile" accept=".plist">
       </div>
-      <div id="warn"></div>
+      <div id="info"></div>
       <a id="download" download="Podcasts.opml" style="display:none"></a>
       <p>If you have any questions or suggestions, welcome to <a href="https://github.com/jiacai2050/podcasts-opml-exporter/issues">open an issue.</a> 🛠</p>
     </div>
