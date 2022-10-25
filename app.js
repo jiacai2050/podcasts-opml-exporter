@@ -56,11 +56,11 @@ function parsePodcastDict(dict) {
   // title: "《赖世雄美语音标》讲解音频"
   // uuid: "55C5D14D-0CCC-4B79-AEA9-17CA3609F522"
   var o = {};
-  for (var i=0;i<dict.childNodes.length-1;i+=4) {
-    var k = dict.childNodes[i+1];
-    k = k.firstChild.nodeValue;
-    var v = dict.childNodes[i+3];
-    v = v.firstChild.nodeValue;
+  for (var i=0;i<dict.children.length-1;i=i+=2) {
+    var k = dict.children[i];
+    k = k.textContent;
+    var v = dict.children[i+1];
+    v = v.textContent;
     o[k] = v;
     // console.log(i, dict.childNodes[i], k ,v);
     if (k==='title') {
