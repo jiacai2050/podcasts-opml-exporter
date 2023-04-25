@@ -1,7 +1,7 @@
 ## macOS Catalina Podcasts OPML Exporter
 
 Export your podcasts subscriptions to [OPML](http://dev.opml.org/spec2.html)
-> https://liujiacai.net/podcasts-opml-exporter/
+> https://jiacai2050.github.io/podcasts-opml-exporter/
 
 ## How
 
